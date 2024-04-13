@@ -12,10 +12,10 @@ setup(function() {
   app.set('view engine', 'pug');
   app.use(require('body-parser')
     .urlencoded({extended:true}));
-  const cookbookController = 
+  const cookbookController =
     require("../../controllers/cookbook-controller");
     cookbookController.setup(app, products);
-  server.listen(8888);
+  server.listen(8080);
 });
 
 teardown(function() {
