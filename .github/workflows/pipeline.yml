@@ -44,9 +44,11 @@ jobs:
           cache: 'npm'
       - name: Run app
         run: npm install
-      - name: Start UI
-        run: npm start
       - name: Install playwright
         run: npx playwright install
+      - name: Start UI
+        run: npm start &
+      - name: Wait for UI to start
+        run: sleep 10s
       - name: Run npm tests
         run: npm run test:ui
